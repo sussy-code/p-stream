@@ -26,8 +26,8 @@ export function KeyboardEvents() {
   );
 
   const [isRolling, setIsRolling] = useState(false);
-  const volumeDebounce = useRef<ReturnType<typeof setTimeout> | undefined>();
-  const subtitleDebounce = useRef<ReturnType<typeof setTimeout> | undefined>();
+  const volumeDebounce = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const subtitleDebounce = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const setCurrentOverlay = useOverlayStack((s) => s.setCurrentOverlay);
 

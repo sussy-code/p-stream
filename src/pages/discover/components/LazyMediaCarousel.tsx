@@ -66,7 +66,7 @@ export function LazyMediaCarousel({
   // }, [isIntersecting, categoryName]);
 
   return (
-    <div ref={targetRef as React.RefObject<HTMLDivElement>}>
+    <div ref={targetRef as React.RefObject<HTMLDivElement | null>}>
       {isIntersecting ? (
         <MediaCarousel
           medias={medias}
