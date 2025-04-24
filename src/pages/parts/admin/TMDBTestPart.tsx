@@ -43,7 +43,7 @@ export function TMDBTestPart() {
 
     try {
       await getMediaDetails("556574", TMDBContentTypes.MOVIE);
-    } catch (err) {
+    } catch {
       return setStatus({
         hasTested: true,
         success: false,

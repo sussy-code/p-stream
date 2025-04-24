@@ -81,7 +81,7 @@ export async function migrateV3Videos(
         }
 
         return clone;
-      } catch (err) {
+      } catch {
         return null;
       }
     }),

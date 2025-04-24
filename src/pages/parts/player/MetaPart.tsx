@@ -57,7 +57,7 @@ export function MetaPart(props: MetaPartProps) {
     if (providerApiUrl && !isValidExtension) {
       try {
         await fetchMetadata(providerApiUrl);
-      } catch (err) {
+      } catch {
         throw new Error("failed-api-metadata");
       }
     } else {

@@ -25,7 +25,7 @@ function getTokenIfValid(): null | string {
     const body = jwtDecode(token);
     if (!body.exp) return `jwt|${token}`;
     if (Date.now() / 1000 < body.exp) return `jwt|${token}`;
-  } catch (err) {
+  } catch {
     // we dont care about parse errors
   }
   return null;

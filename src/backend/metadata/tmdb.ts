@@ -210,7 +210,7 @@ export async function get<T>(url: string, params?: object): Promise<T> {
       },
       signal: abortOnTimeout(5000),
     });
-  } catch (err) {
+  } catch {
     return mwFetch<T>(encodeURI(url), {
       headers: tmdbHeaders,
       baseURL: tmdbBaseUrl2,

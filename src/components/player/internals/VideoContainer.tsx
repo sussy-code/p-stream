@@ -53,7 +53,7 @@ function useObjectUrl(cb: () => string | null, deps: any[]) {
   useEffect(() => {
     return () => {
       // this is intentionally done only in cleanup
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+
       if (lastObjectUrl.current) URL.revokeObjectURL(lastObjectUrl.current);
     };
   }, []);

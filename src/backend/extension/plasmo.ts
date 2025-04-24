@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-object-type */
 export interface ExtensionBaseRequest {}
 
 export type ExtensionBaseResponse<T = object> =

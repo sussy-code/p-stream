@@ -49,7 +49,7 @@ export function BackendTestPart() {
         errorText: "",
         value: backendData,
       });
-    } catch (err) {
+    } catch {
       return setStatus({
         hasTested: true,
         success: false,
