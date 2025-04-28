@@ -27,7 +27,7 @@ const getEventX = (evt: ActivityEvent) => {
 };
 
 export function useProgressBar(
-  barRef: RefObject<HTMLElement | null>,
+  barRef: RefObject<HTMLElement>,
   commit: (percentage: number) => void,
   commitImmediately = false,
 ) {

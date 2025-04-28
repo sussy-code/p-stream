@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export function useSlashFocus(ref: React.RefObject<HTMLInputElement | null>) {
+export function useSlashFocus(ref: React.RefObject<HTMLInputElement>) {
   useEffect(() => {
     const listener = (e: KeyboardEvent) => {
       if (e.key === "/") {

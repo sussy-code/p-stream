@@ -68,7 +68,7 @@ function ThumbnailDisplay(props: { at: number; show: boolean }) {
   );
 }
 
-function useMouseHoverPosition(barRef: RefObject<HTMLDivElement | null>) {
+function useMouseHoverPosition(barRef: RefObject<HTMLDivElement>) {
   const [mousePos, setMousePos] = useState(-1);
 
   const mouseMove = useCallback(

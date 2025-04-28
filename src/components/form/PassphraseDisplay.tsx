@@ -13,7 +13,7 @@ export function PassphraseDisplay(props: { mnemonic: string }) {
   const [hasCopied, setHasCopied] = useState(false);
   const isMounted = useMountedState();
 
-  const timeout = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const timeout = useRef<ReturnType<typeof setTimeout>>();
 
   function copyMnemonic() {
     copy(props.mnemonic);

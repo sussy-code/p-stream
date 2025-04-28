@@ -19,7 +19,7 @@ export interface PlayerProps {
   onLoad?: () => void;
 }
 
-function useHovering(containerEl: RefObject<HTMLDivElement | null>) {
+function useHovering(containerEl: RefObject<HTMLDivElement>) {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const updateInterfaceHovering = usePlayerStore(
     (s) => s.updateInterfaceHovering,

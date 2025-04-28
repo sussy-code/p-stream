@@ -364,7 +364,7 @@ export function MediaCard(props: MediaCardProps) {
   const { media, onShowDetails } = props;
   const [overlayVisible, setOverlayVisible] = useState(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
-  const hoverTimer = useRef<NodeJS.Timeout>(undefined);
+  const hoverTimer = useRef<NodeJS.Timeout>();
   const [isHoveringCard, setIsHoveringCard] = useState(false);
   const [detailsData, setDetailsData] = useState<{
     id: number;

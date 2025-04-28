@@ -43,7 +43,7 @@ const SettingsPage = lazyWithPreload(() => import("@/pages/Settings"));
 PlayerView.preload();
 SettingsPage.preload();
 
-function LegacyUrlView({ children }: { children: ReactElement<any> }) {
+function LegacyUrlView({ children }: { children: ReactElement }) {
   const location = useLocation();
   const navigate = useNavigate();
 
