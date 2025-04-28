@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => {
   return {
     base: env.VITE_BASE_URL || '/',
     plugins: [
-      million.vite({ auto: true, mute: true }),
+      million.vite({ auto: true }),
       handlebars({
         vars: {
           opensearchEnabled: env.VITE_OPENSEARCH_ENABLED === "true",
@@ -123,29 +123,30 @@ export default defineConfig(({ mode }) => {
     build: {
       sourcemap: true,
       rollupOptions: {
-        output: {},
-        manualChunks(id: string) {
-          if (id.includes("@sozialhelden+ietf-language-tags") || id.includes("country-language")) {
-            return "language-db";
-          }
-          if (id.includes("hls.js")) {
-            return "hls";
-          }
-          if (id.includes("node-forge") || id.includes("crypto-js")) {
-            return "auth";
-          }
-          if (id.includes("locales") && !id.includes("en.json")) {
-            return "locales";
-          }
-          if (id.includes("react-dom")) {
-            return "react-dom";
-          }
-          if (id.includes("Icon.tsx")) {
-            return "Icons";
-          }
-          const isCaptioningPackage = captioningPackages.some(packageName => id.includes(packageName));
-          if (isCaptioningPackage) {
-            return "caption-parsing";
+        output: {
+          manualChunks(id: string) {
+            if (id.includes("@sozialhelden+ietf-language-tags") || id.includes("country-language")) {
+              return "language-db";
+            }
+            if (id.includes("hls.js")) {
+              return "hls";
+            }
+            if (id.includes("node-forge") || id.includes("crypto-js")) {
+              return "auth";
+            }
+            if (id.includes("locales") && !id.includes("en.json")) {
+              return "locales";
+            }
+            if (id.includes("react-dom")) {
+              return "react-dom";
+            }
+            if (id.includes("Icon.tsx")) {
+              return "Icons";
+            }
+            const isCaptioningPackage = captioningPackages.some(packageName => id.includes(packageName));
+            if (isCaptioningPackage) {
+              return "caption-parsing";
+            }
           }
         }
       }
